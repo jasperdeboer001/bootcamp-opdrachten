@@ -1,0 +1,6 @@
+IntelliJ is voor java projecten
+Visual studio is een optie voor c# projecten
+Source folders -> packages -> classes -> methoden en variabelen
+test-classes genereren output van tests -> rechtermuisclik emailableReport.html en open in browser
+
+via pom.xml kun je Selenium binnenhalen -> browse naar mvnrepositories, zoek op selenium java, selecteer 1e resultaat en kopieer tekst naar pom dependencies
