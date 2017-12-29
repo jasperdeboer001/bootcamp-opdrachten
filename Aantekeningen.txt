@@ -77,6 +77,7 @@ Gebruik array in loop: for (String game : gameList)
 
 
 Locators:
+Elementen worden gevonden door locators
 xpath:
 //ul/li: alle li elementen die direct aan het ul element vastzitten
 //ul//li: alle li elementen die ergens in de boom aan het ul element vastzitten
@@ -93,3 +94,28 @@ ul li[id*=header_link]>a[title=contact]
 ul[id=header_links]>li:nth-child(2)>a
 ul[id=header_links]>li>a:not([title])
 
+
+Classes and objects:
+Class is a blueprint
+Class is a reference type
+Constructor is methode die wordt geschreven met hoofdletter en delfde naam heeft als class (e.g. public AutoAdvanced())
+Zorgt ervoor dat de browser driver het element kan benaderen
+Gegeven:
+public class AutoAdvanced {
+
+    private String brand;
+
+    public AutoAdvanced(String brand) {
+        this.brand = brand;
+    }
+
+    public void printBrand() {
+        System.out.println("Car brand: " + brand);
+    }
+
+	Zorg ervoor dat elementen die je aanmaakt private of protected zijn
+	
+	
+Static methods:
+Een methode die je niet hoeft te instantieren om aan te kunnen roepen
+Pages kunnen niet static zijn

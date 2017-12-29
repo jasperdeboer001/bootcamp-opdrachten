@@ -19,10 +19,6 @@ public class HomePage {
     }
 
     public Boolean userLoggedIn() {
-        if (loginButton.isDisplayed()) {
-            return false;
-        } else {
-            return true;
-        }
+        return (loginButton.isDisplayed());
     }
 }
