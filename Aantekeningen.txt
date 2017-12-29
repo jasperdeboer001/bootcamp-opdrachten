@@ -1,6 +1,75 @@
+IDE:
 IntelliJ is voor java projecten
 Visual studio is een optie voor c# projecten
 Source folders -> packages -> classes -> methoden en variabelen
-test-classes genereren output van tests -> rechtermuisclik emailableReport.html en open in browser
 
-via pom.xml kun je Selenium binnenhalen -> browse naar mvnrepositories, zoek op selenium java, selecteer 1e resultaat en kopieer tekst naar pom dependencies
+
+Reports:
+test-classes genereren output van tests -> rechtermuisklik emailableReport.html en open in browser
+
+
+Selenium:
+via pom.xml Selenium binnenhalen -> browse naar mvnrepositories, zoek op selenium java, selecteer 1e resultaat en kopieer tekst naar pom dependencies
+via pom.xml webdriver manager binnenhalen -> browse naar mvnrepositories, zoek op webdriver manager, selecteer 1e resultaat en kopieer tekst naar pom dependencies. De webdriver executable is hetgeen waar de code tegenaan praat en dat zelf met de browser praat.
+starten Chrome via Selenium: WebDriver driver = new ChromeDriver
+Ga naar pagina: driver.get("http://www.test.nl")
+Sluit browser aan eind van je test: driver.quit();
+
+
+Elementen en locators:
+Selecteer element: driver.findElement.(By. dan soort element selecteren dan . dan actie selecteren
+driver.findElement(By.className("login")).click;
+driver.findElement(By.id("email")).sendKeys("bootcamper@polteq.com");
+
+	CSS:
+	input#firstTextfield
+	input.firstTextfield
+
+	Xpath:
+	input[id='firstTextfield']
+	input[class='firstTextfield']
+	tekst selecteren alleen bij Xpath: 
+		Alle elementen zoeken met tekst die beginnen met locator a: //a[text()='tekstje']
+		Alle elementen zoeken met tekst: //*[text()='tekstje']
+		Alle elementen zoeken die tekst bevatten die beginnen met locator a: //a[contains(text(), 'tekstje')]
+	
+	
+Assertions:
+Rapportage van errors: .as("Error message") -> Assertions.assertThat(text).as("Username in header").contains("tekst");
+Soft assertions zorgen niet dat de test meteen faalt als de assertion faalt. Zo kun je achteraf (per pagina) alle assertions ineens uitvoeren
+
+git:
+git init: huidige folder wordt gekenmerkt als git repo
+git status: status van toegevoegde, verwijderede en gewijzigde files
+git add .: voeg alles toe aan je git repo
+git commit -m: commit je wijzigingen
+git push -u origin master: push naar remote repo en declareer upstream
+
+git ignore file bevat files en folders die je niet wilt sturen naar je remote origin. Bevat bijvoorbeeld de .idea folder met jouw IntelliJ instellingen (die staat los van de code).
+voeg .idea toe aan gitignore file
+hernoem naar .gitignore.
+git -rm -cached .: zorg dat idea folder wordt herkend door gitignore file
+
+git branch [branch name]: maak een git branch aan
+git checkout [branch name]: ga naar branch
+
+
+Selenium interfaces:
+WebElements: handelingen op elementen (click, sendKeys etc)
+Alerts: handelingen op alert lightboxes
+Cookies: handelingen om cookies te managen (e.g. driver.manage().deleteAllCookies()
+Waits: impliciet (gedurende een bepaalde tijd) en expliciet (tot een conditie is bereikt) wachten
+	Je kunt ook een class maken met functies voor wachten
+
+
+Debuggen:
+Zet breakpoint: code stopt voor regel met breakpoint
+F8 Step over: na breakpoint telkens 1 regel verder
+F7 Step into: ga aangeroepen functies en if/else statements in
+
+
+Arrays:
+Lege array aanmaken: List<String> gameList = new ArrayList<->();
+Toevoegen aan array: gameList.add("option_1");
+Array aanmaken en vullen: List<WebElement>allOptions = driver.findElements(By.xpath(".//option")); (let op s in findElements)
+Gebruik array in loop: for (String game : gameList)
