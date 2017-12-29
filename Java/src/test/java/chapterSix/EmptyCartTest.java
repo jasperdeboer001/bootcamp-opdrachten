@@ -1,3 +1,4 @@
+/*
 package chapterSix;
 
 import org.assertj.core.api.Assertions;
@@ -30,3 +31,4 @@ public class EmptyCartTest extends TestShopScenario {
 
     }
 }
+*/

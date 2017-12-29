@@ -1,4 +1,4 @@
-package chapterSix;
+/*package chapterSix;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -22,4 +22,4 @@ public class ValidateSupplierProductTest extends TestShopScenario {
             if (allOptions.selectByVisibleTest)
         }
     }
-}
+}*/
