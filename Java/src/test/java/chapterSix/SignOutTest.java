@@ -31,6 +31,6 @@ public class SignOutTest extends TestShopScenario {
 
         Assertions.assertThat(header).as("Header does not contain user name").doesNotContain("Jasper de Boer");
         Assertions.assertThat(authentication).as("Authentication displayed in body").isEqualToIgnoringCase("authentication");
-        Assertions.assertThat(logInButton).as("Sign out is displayed").isEqualTo("Sign in");
+        Assertions.assertThat(logInButton).as("Sign in is displayed").isEqualTo("Sign in");
     }
 }

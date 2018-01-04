@@ -1,8 +1,8 @@
 package chapterSix;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+import browser.BrowserFactory;
+import browser.BrowserFactoryAdvanced;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -15,11 +15,14 @@ public class TestShopScenario {
 
     @BeforeMethod
     public void setUp() {
-        ChromeDriverManager.getInstance().setup();
-        driver = new ChromeDriver();
+        //Onderstaande kun je gebruiken
+        //BrowserFactory browserFactory = new BrowserFactory();
+        //driver = browserFactory.getDriver("firefox");
+        //Onderstaande kun je gebruiken als je method static is
+        driver = BrowserFactoryAdvanced.getDriver(BrowserFactoryAdvanced.Browser.CHROME);
         wait = new WebDriverWait(driver, 5);
         driver.get("https://techblog.polteq.com/testshop/");
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
     }
 
     @AfterMethod
