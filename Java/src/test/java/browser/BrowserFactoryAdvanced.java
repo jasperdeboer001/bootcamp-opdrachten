@@ -11,43 +11,49 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import java.util.Map;
-
-public class BrowserFactory {
+public class BrowserFactoryAdvanced {
 
     static WebDriver driver;
 
-    public static WebDriver getDriver(String browser) {
-        switch(browser.toLowerCase()) {
-            case "firefox":
+    public enum Browser {
+        FIREFOX,
+        EDGE,
+        CHROME;
+    }
+    public static WebDriver getDriver(Browser browser) {
+        switch (browser) {
+            case FIREFOX:
                 return getFirefoxDriver();
-            case "edge":
+            case EDGE:
                 return getEdgeDriver();
-            case "chrome": default:
+            case CHROME:
+            default:
                 return getChromeDriver();
         }
     }
+
 
 //losse methods maken het mogelijk om qua setup te differentieren
 
     private static WebDriver getFirefoxDriver() {
         FirefoxOptions firefoxOptions = new FirefoxOptions();
-        firefoxOptions.addArguments("start-maximized");
+        firefoxOptions.addArguments("--start-maximized");
         FirefoxDriverManager.getInstance().setup();
         return driver = new FirefoxDriver(firefoxOptions);
     }
 
     private static WebDriver getChromeDriver() {
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("start-maximized");
+        chromeOptions.addArguments("--start-maximized");
         ChromeDriverManager.getInstance().setup();
         return driver = new ChromeDriver(chromeOptions);
     }
 
     private static WebDriver getEdgeDriver() {
+        //addArguments zijn niet mogelijk voor Edge, dus capabilities moeten op een andere manier worden gezet
         DesiredCapabilities capabilities = DesiredCapabilities.edge();
         EdgeDriverManager.getInstance().setup();
-        //capabilities.setCapability(edge);
+        capabilities.setCapability("edge switches", "--start-maximized");
         return driver = new EdgeDriver(capabilities);
     }
 }

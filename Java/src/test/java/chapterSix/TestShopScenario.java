@@ -1,6 +1,7 @@
 package chapterSix;
 
 import browser.BrowserFactory;
+import browser.BrowserFactoryAdvanced;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
@@ -18,10 +19,10 @@ public class TestShopScenario {
         //BrowserFactory browserFactory = new BrowserFactory();
         //driver = browserFactory.getDriver("firefox");
         //Onderstaande kun je gebruiken als je method static is
-        driver = BrowserFactory.getDriver("firefox");
+        driver = BrowserFactoryAdvanced.getDriver(BrowserFactoryAdvanced.Browser.CHROME);
         wait = new WebDriverWait(driver, 5);
         driver.get("https://techblog.polteq.com/testshop/");
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
     }
 
     @AfterMethod

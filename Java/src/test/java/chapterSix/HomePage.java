@@ -1,5 +1,6 @@
 package chapterSix;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,6 +13,9 @@ public class HomePage {
     @FindBy(css="a[class='login']")
     private WebElement loginButton;
 
+    @FindBy(css="h4[class='title_block'] a[title='My wishlists']")
+    private WebElement wishListLink;
+
     public HomePage(WebDriver driver) {
         this.driver = driver;
 
@@ -19,6 +23,14 @@ public class HomePage {
     }
 
     public Boolean userLoggedIn() {
-        return (loginButton.isDisplayed());
+        return (!loginButton.isDisplayed());
+    }
+
+    public void logOut() {
+        driver.findElement(By.className("logout")).click();
+    }
+
+    public void clickWishList() {
+        wishListLink.click();
     }
 }
