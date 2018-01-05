@@ -125,4 +125,7 @@ Enum:
 Een variabele die nooit veranderd. Deze wordt genoteerd in hoofdletters bedoeld om het selecteren van de variabele robuuster te maken (te voorkomen dat je een tikfout maakt)
 
 
-Test validatie:
+API testing:
+Wanneer?
+	- Geen consumer aan provider kant (geen consumer aan provider kant)
+	- Applicatie met losse frontend en backend applicaties (angular, microservices)

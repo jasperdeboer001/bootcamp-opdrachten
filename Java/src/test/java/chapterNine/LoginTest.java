@@ -25,3 +25,4 @@ public class LogInTest extends TestShopScenario {
         Assertions.assertThat(homePage.userLoggedIn().equals(true));
     }
 }
+
