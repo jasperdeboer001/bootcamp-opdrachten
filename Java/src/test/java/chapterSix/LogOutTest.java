@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 
 import org.testng.annotations.Test;
 
-public class SignOutTest extends TestShopScenario {
+public class LogOutTest extends TestShopScenario {
 
     @Test
     public void signOut() {

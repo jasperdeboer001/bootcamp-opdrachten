@@ -27,6 +27,9 @@ public class ContactUsPage {
     @FindBy(id="submitMessage")
     private WebElement submitButton;
 
+    @FindBy(css="page-heading.bottom-indent")
+    private WebElement pageHeading;
+
     public ContactUsPage(WebDriver driver) {
         this.driver = driver;
 
@@ -42,4 +45,15 @@ public class ContactUsPage {
         messageField.sendKeys(message);
         submitButton.click();
     }
+
+    public void clickPageHeading() {
+        pageHeading.click();
+    }
+
+    public void clearData() {
+        orderReferenceField.clear();
+        emailField.clear();
+        messageField.clear();
+    }
+
 }

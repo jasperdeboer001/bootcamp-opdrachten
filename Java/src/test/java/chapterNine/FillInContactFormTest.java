@@ -14,7 +14,7 @@ public class FillInContactFormTest extends TestShopScenario {
         HomePage homePage = new HomePage(driver);
         ContactUsPage contactUsPage = new ContactUsPage(driver);
 
-        if (homePage.userLoggedIn().equals(false)) {
+        if (homePage.userLoggedOut().equals(false)) {
             driver.findElement(By.cssSelector("a[title=contact]")).click();
             contactUsPage.submitForm("Customer service", "bootcamper@feelthepain.com", 4321234, "<Ipod defect while lifting, need new one>");
             //wait

@@ -10,11 +10,17 @@ public class HomePage {
 
     WebDriver driver;
 
-    @FindBy(css="a[class='login']")
-    private WebElement loginButton;
+    @FindBy(className=("login"))
+    private WebElement logInButton;
+
+    @FindBy(className=("logout"))
+    private WebElement logOutButton;
 
     @FindBy(css="h4[class='title_block'] a[title='My wishlists']")
     private WebElement wishListLink;
+
+    @FindBy(css=("a[title=contact]"))
+    private WebElement contactUsLink;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -22,15 +28,28 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
-    public Boolean userLoggedIn() {
-        return (!loginButton.isDisplayed());
+    public Boolean userLoggedOut() {
+        return (logInButton).isDisplayed();
     }
 
-    public void logOut() {
-        driver.findElement(By.className("logout")).click();
+    public Boolean userLoggedIn() {
+        return (logOutButton).isDisplayed();
+    }
+
+    public void clickLogInButton() {
+        logInButton.click();
+    }
+
+    public void clickLogOutButton() {
+        WebElement logOutButton = driver.findElement(By.className("logout"));
+        logOutButton.click();
     }
 
     public void clickWishList() {
         wishListLink.click();
+    }
+
+    public void clickContactUs() {
+        contactUsLink.click();
     }
 }
