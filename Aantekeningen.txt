@@ -51,6 +51,7 @@ hernoem naar .gitignore.
 git -rm -cached .: zorg dat idea folder wordt herkend door gitignore file
 
 git branch [branch name]: maak een git branch aan
+
 git checkout [branch name]: ga naar branch
 
 
@@ -129,3 +130,8 @@ API testing:
 Wanneer?
 	- Geen consumer aan provider kant (geen consumer aan provider kant)
 	- Applicatie met losse frontend en backend applicaties (angular, microservices)
+Gebruik RestAssured
+
+
+Data driven:
+Voor bv een csv file inlezen bestaat een aparte Java methode genaamd bufferedReader. JUnit kan gemakkelijk csv files gebruiken maar voor TestNG moet je een DataProvider gebruiken
