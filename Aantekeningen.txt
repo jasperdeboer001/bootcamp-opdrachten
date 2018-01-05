@@ -129,3 +129,4 @@ API testing:
 Wanneer?
 	- Geen consumer aan provider kant (geen consumer aan provider kant)
 	- Applicatie met losse frontend en backend applicaties (angular, microservices)
+Gebruik RestAssured

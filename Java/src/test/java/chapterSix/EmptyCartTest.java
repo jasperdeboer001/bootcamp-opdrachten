@@ -1,4 +1,4 @@
-/*
+
 package chapterSix;
 
 import org.assertj.core.api.Assertions;
@@ -13,13 +13,14 @@ public class EmptyCartTest extends TestShopScenario {
     //fillCartTest.addToCart();
 
     @Test
-    public void removeFromCart() {
+    public void removeFromCart() throws InterruptedException {
         boolean cartIsEmpty = driver.findElement(By.className("ajax_cart_no_product")).isDisplayed();
         Actions hover = new Actions(driver);
 
         WebElement cart = driver.findElement(By.cssSelector("a[title='View my shopping cart']"));
         hover.moveToElement(cart).build().perform();
-        wait.until();
+        //TODO
+        // wait.until()
         if (cartIsEmpty) {
             System.out.println("Cart is empty");
         }
@@ -31,4 +32,4 @@ public class EmptyCartTest extends TestShopScenario {
 
     }
 }
-*/
+
