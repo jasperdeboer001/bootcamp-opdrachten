@@ -51,4 +51,87 @@ hernoem naar .gitignore.
 git -rm -cached .: zorg dat idea folder wordt herkend door gitignore file
 
 git branch [branch name]: maak een git branch aan
+
 git checkout [branch name]: ga naar branch
+
+
+Selenium interfaces:
+WebElements: handelingen op elementen (click, sendKeys etc)
+	Om waardes van attributen op te kunnen slaan in een variabele kies .getAttribute
+Alerts: handelingen op alert lightboxes
+Cookies: handelingen om cookies te managen (e.g. driver.manage().deleteAllCookies()
+Waits: impliciet (gedurende een bepaalde tijd) en expliciet (tot een conditie is bereikt) wachten
+	Je kunt ook een class maken met functies voor wachten
+
+
+Debuggen:
+Zet breakpoint: code stopt voor regel met breakpoint
+F8 Step over: na breakpoint telkens 1 regel verder
+F7 Step into: ga aangeroepen functies en if/else statements in
+
+
+Arrays:
+Lege array aanmaken: List<String> gameList = new ArrayList<->();
+Toevoegen aan array: gameList.add("option_1");
+Array aanmaken en vullen: List<WebElement>allOptions = driver.findElements(By.xpath(".//option")); (let op s in findElements)
+Gebruik array in loop: for (String game : gameList)
+
+
+Locators:
+Elementen worden gevonden door locators
+xpath:
+//ul/li: alle li elementen die direct aan het ul element vastzitten
+//ul//li: alle li elementen die ergens in de boom aan het ul element vastzitten
+//ul//li[contains(@id,'header_link')]
+//ul/li[contains(@id,'header_link')]/a[@title='contact']
+//ul[@id='header_links']/li[2]/a
+//ul[@id='header_links']/li/a[not(@title)] (alle a's onder header_links die geen attribuut title hebben)
+//div[@id='categories_block_left']//a[text() = ' iPods '] (selecteer op tekst)
+(//ul//li)[1] (maak een lijst met alle resultaten obv huidige locator en gebruik daarvan het 1e resultaat)
+css:
+ul li
+ul li[id*=header_link] (het * is een contains)
+ul li[id*=header_link]>a[title=contact]
+ul[id=header_links]>li:nth-child(2)>a
+ul[id=header_links]>li>a:not([title])
+
+
+Classes and objects:
+Class is a blueprint
+Class is a reference type
+Constructor is methode die wordt geschreven met hoofdletter en delfde naam heeft als class (e.g. public AutoAdvanced())
+Zorgt ervoor dat de browser driver het element kan benaderen
+Gegeven:
+public class AutoAdvanced {
+
+    private String brand;
+
+    public AutoAdvanced(String brand) {
+        this.brand = brand;
+    }
+
+    public void printBrand() {
+        System.out.println("Car brand: " + brand);
+    }
+
+	Zorg ervoor dat elementen die je aanmaakt private of protected zijn
+	
+	
+Static methods:
+Een methode die je niet hoeft te instantieren om aan te kunnen roepen
+Pages kunnen niet static zijn
+
+
+Enum: 
+Een variabele die nooit veranderd. Deze wordt genoteerd in hoofdletters bedoeld om het selecteren van de variabele robuuster te maken (te voorkomen dat je een tikfout maakt)
+
+
+API testing:
+Wanneer?
+	- Geen consumer aan provider kant (geen consumer aan provider kant)
+	- Applicatie met losse frontend en backend applicaties (angular, microservices)
+Gebruik RestAssured
+
+
+Data driven:
+Voor bv een csv file inlezen bestaat een aparte Java methode genaamd bufferedReader. JUnit kan gemakkelijk csv files gebruiken maar voor TestNG moet je een DataProvider gebruiken
