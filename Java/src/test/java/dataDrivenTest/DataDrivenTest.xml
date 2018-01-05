@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DOCTYPE is belangrijk voor IntelliJ. Adhv soort xml (JUnit of TestNG) kan code completion werken binnen XML -->
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite" parallel="none"> <!--parallel = "true" kan Selenium niet echt aan -->
+    <test name="loginTestCorrectCredentials">
+        <!-- Gebruik deze parameters -->
+        <parameter name="loginName" value="Jasper@deBoer.com" />
+        <parameter name="passwd" value="1qazxsw2" />
+        <parameter name="loggedIn" value="true" />
+        <classes>
+            <!-- Start deze class op -->
+            <class name="dataDrivenTest.DataDrivenTest" />
+        </classes>
+    </test>
+    <!-- Herhaal test voor andere browser -->
+    <test name="loginTestIncorrectCredentials">
+        <parameter name="loginName" value="Pietje@Puk.com" />
+        <parameter name="passwd" value="doemaariets" />
+        <parameter name="loggedIn" value="false" />
+        <classes>
+            <class name="dataDrivenTest.DataDrivenTest" />
+        </classes>
+    </test>
+</suite>
