@@ -42,7 +42,8 @@ public class MyWishListPage {
                 Thread.sleep(5000);
 
                 break;
-            } else {
+            }
+            else {
                 System.out.println("Match not found");
             }
         }

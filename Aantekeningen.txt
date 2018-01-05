@@ -119,3 +119,10 @@ public class AutoAdvanced {
 Static methods:
 Een methode die je niet hoeft te instantieren om aan te kunnen roepen
 Pages kunnen niet static zijn
+
+
+Enum: 
+Een variabele die nooit veranderd. Deze wordt genoteerd in hoofdletters bedoeld om het selecteren van de variabele robuuster te maken (te voorkomen dat je een tikfout maakt)
+
+
+Test validatie:
