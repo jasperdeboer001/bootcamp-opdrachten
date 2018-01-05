@@ -7,7 +7,7 @@ import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-public class LogInTest extends TestShopScenario {
+public class LoginTest extends TestShopScenario {
 
     @Test
     public void userLogin() {
