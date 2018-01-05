@@ -72,8 +72,8 @@ public class NOK_LogInTest extends TestShopScenario {
 
         if (homePage.userLoggedOut()) {
             homePage.clickLogInButton();
-            myAccountPage.logIn(correctEmail, correctPasswd);
-            Assertions.assertThat(driver.findElement(By.xpath("//div[contains(@class, 'alert-danger')]/ol/li")).getText()).as("").isEqualTo("Invalid password.");
+            myAccountPage.logIn(correctEmail, incorrectPasswd);
+            Assertions.assertThat(driver.findElement(By.xpath("//div[contains(@class, 'alert-danger')]/ol/li")).getText()).as("").isEqualTo("Authentication failed.");
             myAccountPage.clearFields();
         }
         else {

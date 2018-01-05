@@ -22,6 +22,9 @@ public class HomePage {
     @FindBy(css=("a[title=contact]"))
     private WebElement contactUsLink;
 
+    @FindBy(className=("nav"))
+    private WebElement header;
+
     public HomePage(WebDriver driver) {
         this.driver = driver;
 
@@ -33,7 +36,13 @@ public class HomePage {
     }
 
     public Boolean userLoggedIn() {
-        return (logOutButton).isDisplayed();
+        if (header.getText().contains("Jasper de Boer"))
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public void clickLogInButton() {

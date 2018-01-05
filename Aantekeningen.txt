@@ -135,3 +135,4 @@ Gebruik RestAssured
 
 Data driven:
 Voor bv een csv file inlezen bestaat een aparte Java methode genaamd bufferedReader. JUnit kan gemakkelijk csv files gebruiken maar voor TestNG moet je een DataProvider gebruiken
+
